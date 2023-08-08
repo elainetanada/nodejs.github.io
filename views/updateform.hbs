@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid mt-5 w-25">
+        <div class="card wd-75 p-74">
+            <div class="card-body">
+                <form action="/auth/updateuser" method="POST">
+                         {{#if message}}
+                        <h4 class="alert-primary">{{message}}</h4>
+                        {{/if}}
+                    <fieldset>
+                        <legend>Registration</legend>
+
+                        <div class="mb-3">
+                            <label for="firstName">First Name:</label>
+                            <input type="text" class="form-control" name="firstName" id="first_name" value="{{result.first_name}}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="lastName">Last Name:</label>
+                            <input type="text" class="form-control" name="lastName" id="last_name" value="{{result.last_name}}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email">Email:</label>
+                            <input type="text" class="form-control" name="email" id="email" placeholder="sample@mail.com" value="{{result.email}}" readonly>
+                        </div>
+                        <button class="btn btn-outline-primary mt-3" type="submit">Update</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

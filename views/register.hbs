@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container-fluid mt-5 w-25">
+        <div class="card wd-75 p-74">
+            <div class="card-body">
+                <form action="/auth/register" method="POST">
+                    <fieldset>
+                        <legend>Registration</legend>
+
+                        <div class="mb-3">
+                            <label for="firstName">First Name:</label>
+                            <input type="text" class="form-control" name="firstName" id="first_name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="lastName">Last Name:</label>
+                            <input type="text" class="form-control" name="lastName" id="last_name" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="email">Email:</label>
+                            <input type="text" class="form-control" name="email" id="email"
+                                placeholder="sample@mail.com" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="password">Password:</label>
+                            <input type="password" class="form-control" name="password" id="password" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmPassword">Confirm Password:</label>
+                            <input type="password" class="form-control" name="confirmPassword" id="confirm_password" />
+                        </div>
+                        <button class="btn btn-outline-primary mt-3" type="submit">Submit</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    {{#if message}}
+    <h4 class="alert-primary">{{message}}</h4>
+    {{/if}}
+
+    {{#if errorMsg}}
+    <h4 class="alert-danger">{{errorMsg}}</h4>
+    {{/if}}
+
+    {{!-- ==== BOOTSTRAP ==== --}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
